@@ -37,6 +37,7 @@ jobs:
         run: |
           pwd
           cd saucedemo
+          pwd
           npx cypress run
 
       - name: Upload Mochawesome HTML report
