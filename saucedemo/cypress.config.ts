@@ -6,7 +6,8 @@ export default defineConfig({
     reportDir: 'cypress/reports',
     overwrite: true,
     html: true,
-    json: false
+    json: false,
+    inlineAssets: true
   },
   e2e: { 
         setupNodeEvents(on, config) {
