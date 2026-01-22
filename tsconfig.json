@@ -9,7 +9,7 @@
     "skipLibCheck": true
   },
   "include": [
-    "cypress/**/*.ts"
+    "saucedemo/cypress/**/*.ts"
   ],
   "exclude": [
     "node_modules"
