@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
-          path: saucedemo/cypress/reports
+          path: saucedemo/cypress/reports/html
 
       - name: Upload Cypress screenshots (on failure)
         if: failure()
