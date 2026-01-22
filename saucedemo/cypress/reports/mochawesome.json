@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-01-22T15:31:50.628Z",
+    "end": "2026-01-22T15:31:55.307Z",
+    "duration": 4679,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "46f80d79-2ba3-4cf5-a8d3-57d3fc9d4b0f",
+      "title": "",
+      "fullFile": "integration/e2e/cart.spec.ts",
+      "file": "integration/e2e/cart.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "abc8bcf3-e038-41fc-bc9d-524141b2382f",
+          "title": "End-to-end test cases for the Cart Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "[smoke] Verify adding items to cart",
+              "fullTitle": "End-to-end test cases for the Cart Page [smoke] Verify adding items to cart",
+              "timedOut": null,
+              "duration": 3294,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/cart.spec.ts\"\n}",
+              "code": "cy.log('Add multiple products to cart');\n['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt'].forEach(function (product) {\n    inventoryPage.addProductToCart(product);\n    inventoryPage.verifyRemoveOptionIsDisplayedFor(product);\n});\ncy.log('Verify cart badge count is 3');\ninventoryPage.verifyCartBadgeCount(3);\ncy.log('Navigate to cart and verify items with correct prices');\ncartPage.navigateToCart();\ncartPage.verifyMultipleItems([\n    { name: 'Sauce Labs Backpack', price: '$29.99' },\n    { name: 'Sauce Labs Bike Light', price: '$9.99' },\n    { name: 'Sauce Labs Bolt T-Shirt', price: '$15.99' }\n]);\ncy.log('Return to inventory page');\ninventoryPage.navigateToInventoryPage();",
+              "err": {},
+              "uuid": "547111d5-5b97-4560-867f-6255cb27a23b",
+              "parentUUID": "abc8bcf3-e038-41fc-bc9d-524141b2382f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[regression] Verify adding and removing items from the cart",
+              "fullTitle": "End-to-end test cases for the Cart Page [regression] Verify adding and removing items from the cart",
+              "timedOut": null,
+              "duration": 1359,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/cart.spec.ts\"\n}",
+              "code": "cy.log('Add products to cart');\ninventoryPage.addProductToCart('Sauce Labs Backpack');\ninventoryPage.addProductToCart('Sauce Labs Bike Light');\ninventoryPage.verifyCartBadgeCount(2);\ncy.log('Remove one item from inventory page and verify badge');\ninventoryPage.removeItemAddedToCart('Sauce Labs Backpack');\ninventoryPage.verifyCartBadgeCount(1);\ncy.log('Verify remaining item in cart');\ncartPage.navigateToCart();\ncartPage.verifyMultipleItems([{ name: 'Sauce Labs Bike Light', price: '$9.99' }]);\ncy.log('Remove remaining item from cart page');\ncartPage.removeProductFromCart('Sauce Labs Bike Light');\ncy.log('Return to inventory and re-add item');\ninventoryPage.navigateToInventoryPage();\ninventoryPage.addProductToCart('Sauce Labs Bike Light');",
+              "err": {},
+              "uuid": "4e082a03-b600-4710-87ca-3d7761bd5768",
+              "parentUUID": "abc8bcf3-e038-41fc-bc9d-524141b2382f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "547111d5-5b97-4560-867f-6255cb27a23b",
+            "4e082a03-b600-4710-87ca-3d7761bd5768"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4653,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

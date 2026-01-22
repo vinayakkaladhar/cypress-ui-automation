@@ -1,0 +1,260 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2026-01-22T15:31:50.628Z",
+    "end": "2026-01-22T15:32:05.505Z",
+    "duration": 14877
+  },
+  "results": [
+    {
+      "uuid": "46f80d79-2ba3-4cf5-a8d3-57d3fc9d4b0f",
+      "title": "",
+      "fullFile": "integration/e2e/cart.spec.ts",
+      "file": "integration/e2e/cart.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "abc8bcf3-e038-41fc-bc9d-524141b2382f",
+          "title": "End-to-end test cases for the Cart Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "[smoke] Verify adding items to cart",
+              "fullTitle": "End-to-end test cases for the Cart Page [smoke] Verify adding items to cart",
+              "timedOut": null,
+              "duration": 3294,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/cart.spec.ts\"\n}",
+              "code": "cy.log('Add multiple products to cart');\n['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt'].forEach(function (product) {\n    inventoryPage.addProductToCart(product);\n    inventoryPage.verifyRemoveOptionIsDisplayedFor(product);\n});\ncy.log('Verify cart badge count is 3');\ninventoryPage.verifyCartBadgeCount(3);\ncy.log('Navigate to cart and verify items with correct prices');\ncartPage.navigateToCart();\ncartPage.verifyMultipleItems([\n    { name: 'Sauce Labs Backpack', price: '$29.99' },\n    { name: 'Sauce Labs Bike Light', price: '$9.99' },\n    { name: 'Sauce Labs Bolt T-Shirt', price: '$15.99' }\n]);\ncy.log('Return to inventory page');\ninventoryPage.navigateToInventoryPage();",
+              "err": {},
+              "uuid": "547111d5-5b97-4560-867f-6255cb27a23b",
+              "parentUUID": "abc8bcf3-e038-41fc-bc9d-524141b2382f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[regression] Verify adding and removing items from the cart",
+              "fullTitle": "End-to-end test cases for the Cart Page [regression] Verify adding and removing items from the cart",
+              "timedOut": null,
+              "duration": 1359,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/cart.spec.ts\"\n}",
+              "code": "cy.log('Add products to cart');\ninventoryPage.addProductToCart('Sauce Labs Backpack');\ninventoryPage.addProductToCart('Sauce Labs Bike Light');\ninventoryPage.verifyCartBadgeCount(2);\ncy.log('Remove one item from inventory page and verify badge');\ninventoryPage.removeItemAddedToCart('Sauce Labs Backpack');\ninventoryPage.verifyCartBadgeCount(1);\ncy.log('Verify remaining item in cart');\ncartPage.navigateToCart();\ncartPage.verifyMultipleItems([{ name: 'Sauce Labs Bike Light', price: '$9.99' }]);\ncy.log('Remove remaining item from cart page');\ncartPage.removeProductFromCart('Sauce Labs Bike Light');\ncy.log('Return to inventory and re-add item');\ninventoryPage.navigateToInventoryPage();\ninventoryPage.addProductToCart('Sauce Labs Bike Light');",
+              "err": {},
+              "uuid": "4e082a03-b600-4710-87ca-3d7761bd5768",
+              "parentUUID": "abc8bcf3-e038-41fc-bc9d-524141b2382f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "547111d5-5b97-4560-867f-6255cb27a23b",
+            "4e082a03-b600-4710-87ca-3d7761bd5768"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4653,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c0f2e277-ee05-4945-8ca3-4393f5851d85",
+      "title": "",
+      "fullFile": "integration/e2e/checkout.spec.ts",
+      "file": "integration/e2e/checkout.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "003754eb-153d-43aa-897c-96a3e8ff0b5f",
+          "title": "End-to-end test cases for the checkout experience Inventory → Cart → Checkout",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "[smoke] Verify checkout experience of the user",
+              "fullTitle": "End-to-end test cases for the checkout experience Inventory → Cart → Checkout [smoke] Verify checkout experience of the user",
+              "timedOut": null,
+              "duration": 2568,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/checkout.spec.ts\"\n}",
+              "code": "cy.log('Add multiple products to cart');\n['Sauce Labs Backpack', 'Sauce Labs Bike Light'].forEach(function (product) {\n    inventoryPage.addProductToCart(product);\n});\ncy.log('Verify cart badge count is 2');\ninventoryPage.verifyCartBadgeCount(2);\ncy.log('Navigate to cart and verify items with correct prices');\ncartPage.navigateToCart();\ncartPage.verifyMultipleItems([\n    { name: 'Sauce Labs Backpack', price: '$29.99' },\n    { name: 'Sauce Labs Bike Light', price: '$9.99' }\n]);\ncy.log('Navigate to checkout page');\ncheckoutPage.clickCheckoutButton();\ncy.log('Fill in checkout information');\ncheckoutPage.firstName().type(cypress_prod_json_1.default.firstName);\ncheckoutPage.lastName().type(cypress_prod_json_1.default.lastName);\ncheckoutPage.postalCode().type(cypress_prod_json_1.default.postalCode);\ncy.log('Continue with the checkout process');\ncheckoutPage.clickContinueButton();\ncartPage.verifyMultipleItems([\n    { name: 'Sauce Labs Backpack', price: '$29.99' },\n    { name: 'Sauce Labs Bike Light', price: '$9.99' }\n]);\ncy.log('Verify summary details');\ncheckoutPage.verifySummaryDetails({\n    payment: 'SauceCard #31337',\n    shipping: 'Free Pony Express Delivery!',\n    subtotal: 'Item total: $39.98',\n    tax: 'Tax: $3.20',\n    total: 'Total: $43.18'\n});\ncheckoutPage.completeCheckout();\ncy.log('Verify order completion');\ncheckoutPage.verifyOrderCompletion();",
+              "err": {},
+              "uuid": "9e5749b2-5833-4ffd-bf76-9355281c239a",
+              "parentUUID": "003754eb-153d-43aa-897c-96a3e8ff0b5f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9e5749b2-5833-4ffd-bf76-9355281c239a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2568,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "53afaa5f-5515-46e6-931e-a614623bdcd4",
+      "title": "",
+      "fullFile": "integration/e2e/inventory.spec.ts",
+      "file": "integration/e2e/inventory.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90a798c8-5b47-4fdb-bdbe-8e5d759e08da",
+          "title": "End-to-end test cases for the Products Inventory Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "[smoke] Verify user can navigate to inventory page with items listed",
+              "fullTitle": "End-to-end test cases for the Products Inventory Page [smoke] Verify user can navigate to inventory page with items listed",
+              "timedOut": null,
+              "duration": 1479,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/inventory.spec.ts\"\n}",
+              "code": "cy.log('Verify inventory page is loaded');\ninventoryPage.verifyInventoryProductsPageIsLoaded();\ncy.log('Check cart icon, sorting options, and product list');\ninventoryPage.verifyCartAndSortingOptionsAreDisplayed();\ninventoryPage.verifyProductsListIsDisplayed(3);\ncy.log('Verify details and add-to-cart option for Sauce Labs Backpack');\ninventoryPage.verifyProductDetailsAreDisplayedWithPrice('Sauce Labs Backpack', '29.99');\ninventoryPage.verifyAddToCartOptionIsDisplayedFor('Sauce Labs Backpack');",
+              "err": {},
+              "uuid": "4b004907-0c58-490b-b4a2-cd8cbc60e5a5",
+              "parentUUID": "90a798c8-5b47-4fdb-bdbe-8e5d759e08da",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[regression] Verify product sorting functionality",
+              "fullTitle": "End-to-end test cases for the Products Inventory Page [regression] Verify product sorting functionality",
+              "timedOut": null,
+              "duration": 1410,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/inventory.spec.ts\"\n}",
+              "code": "cy.log('Sort by Name (Z to A) and verify first item');\ninventoryPage.selectSortingByValue('za');\ninventoryPage.verifyFirstItemName('Test.allTheThings() T-Shirt (Red)');\ncy.log('Sort by Name (A to Z) and verify first item');\ninventoryPage.selectSortingByValue('az');\ninventoryPage.verifyFirstItemName('Sauce Labs Backpack');\ncy.log('Sort by Price (Low to High) and verify first item');\ninventoryPage.selectSortingByValue('lohi');\ninventoryPage.verifyFirstItemName('Sauce Labs Onesie');\ncy.log('Sort by Price (High to Low) and verify first item');\ninventoryPage.selectSortingByValue('hilo');\ninventoryPage.verifyFirstItemName('Sauce Labs Fleece Jacket');",
+              "err": {},
+              "uuid": "b8eca4d4-4042-4b59-a44b-df7025ed4dd7",
+              "parentUUID": "90a798c8-5b47-4fdb-bdbe-8e5d759e08da",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4b004907-0c58-490b-b4a2-cd8cbc60e5a5",
+            "b8eca4d4-4042-4b59-a44b-df7025ed4dd7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2889,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

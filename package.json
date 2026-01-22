@@ -16,10 +16,10 @@
     "format": "npm run prettier && npm run lint",
     "lint": "eslint  \"cypress/**/*.ts\" --fix --ignore-path=\".gitignore\"",
     "prettier": "prettier --write .",
-    "reports:clean": "rm -rf cypress/reports/integration",
-    "reports:generate": "marge cypress/reports/report.json --reportDir cypress/reports",
-    "reports:merge": "mochawesome-merge cypress/reports/integration/*.json > cypress/reports/report.json"
-  },
+  "merge-reports": "mochawesome-merge saucedemo/cypress/reports/*.json > saucedemo/cypress/merged.json",
+  "generate-report": "marge saucedemo/cypress/merged.json -o saucedemo/cypress/reports/html --reportFilename index.html",
+  "report": "npm run merge-reports && npm run generate-report"
+  },  
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "4.28.1",
     "@typescript-eslint/parser": "4.28.1",

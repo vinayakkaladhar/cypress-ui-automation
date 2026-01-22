@@ -3,6 +3,9 @@
     "cypress-grep": "^3.0.4"
   },
   "devDependencies": {
-    "mochawesome": "^7.1.4"
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0",
+    "mochawesome-report-generator": "^6.3.2"
   }
 }
