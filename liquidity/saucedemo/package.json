@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "cypress-grep": "^3.0.4"
-  },
-  "devDependencies": {
-    "mochawesome": "^7.1.4"
-  }
-}
