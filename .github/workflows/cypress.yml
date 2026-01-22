@@ -28,7 +28,10 @@ jobs:
         run: npm ci
 
       - name: Install cypress
-        run: npx cypress install
+        run: |
+          pwd
+          cd saucedemo
+          npx cypress install
 
       - name: Run Cypress tests (headless)
         run: |
