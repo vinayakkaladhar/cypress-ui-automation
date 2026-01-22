@@ -90,21 +90,25 @@ For each option:
 
 ## 🧱 Project Structurecypress/
 
+```
+cypress/
 ├── e2e/
-│ ├── inventory.spec.ts
-│ ├── cart.spec.ts
-│ └── checkout.spec.ts
+│   ├── inventory.spec.ts
+│   ├── cart.spec.ts
+│   └── checkout.spec.ts
 ├── pages/
-│ ├── LoginPage.ts
-│ ├── InventoryPage.ts
-│ └── CartPage.ts
+│   ├── LoginPage.ts
+│   ├── InventoryPage.ts
+│   └── CartPage.ts
 ├── support/
-│ ├── commands.ts
-│ └── e2e.ts
+│   ├── commands.ts
+│   └── e2e.ts
 ├── reports/
+├── fixtures/
 package.json
 cypress.config.ts
 README.md
+```
 
 ---
 
@@ -127,8 +131,6 @@ README.md
 
 ### Install dependencies
 
-```bash
-npm install
 ```bash
 npm install
 ```
