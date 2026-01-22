@@ -11,12 +11,6 @@ describe('End-to-end test cases for the Products Inventory Page', () => {
   const inventoryPage = new InventoryPage();
   const cartPage = new CartPage();
 
-  beforeEach(() => {
-    cy.log('Login to the application');
-    cy.visit(data.loginUrl);
-    cy.login();
-  });
-
   it('[smoke] Verify user can navigate to inventory page with items listed', () => {
     cy.log('Verify inventory page is loaded');
     inventoryPage.verifyInventoryProductsPageIsLoaded();

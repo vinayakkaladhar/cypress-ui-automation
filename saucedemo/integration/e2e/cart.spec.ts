@@ -5,17 +5,11 @@ import { CartPage } from '../../pages/cart-page';
 import '../../support/command';
 
 
-describe('End-to-end test cases for the Products Inventory Page', () => {
+describe('End-to-end test cases for the Cart Page', () => {
 
   const loginPage = new LoginPage();
   const inventoryPage = new InventoryPage();
   const cartPage = new CartPage();
-
-  beforeEach(() => {
-    cy.log('Login to the application');
-    cy.visit(data.loginUrl);
-    cy.login();
-  });
 
   it('[smoke] Verify adding items to cart', () => {
     cy.log('Add multiple products to cart');

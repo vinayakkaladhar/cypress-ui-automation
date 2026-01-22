@@ -38,7 +38,7 @@ jobs:
           pwd
           cd saucedemo
           pwd
-          npx cypress run
+          npx cypress run --browser chrome
 
       - name: Upload Mochawesome HTML report
         if: always()

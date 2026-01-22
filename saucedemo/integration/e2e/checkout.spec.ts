@@ -13,12 +13,6 @@ describe('End-to-end test cases for the checkout experience Inventory â†’ Cart â
   const cartPage = new CartPage();
   const checkoutPage = new CheckoutPage();
 
-  beforeEach(() => {
-    cy.log('Login to the application');
-    cy.visit(data.loginUrl);
-    cy.login();
-  });
-
   it('[smoke] Verify checkout experience of the user', () => {
     cy.log('Add multiple products to cart');
     ['Sauce Labs Backpack', 'Sauce Labs Bike Light'].forEach(product => {

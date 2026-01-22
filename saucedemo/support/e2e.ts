@@ -1,12 +1,9 @@
 import './command';
+import data from '../config/cypress.prod.json';
+// cypress/support/e2e.js
 
-Cypress.on('uncaught:exception', (err) => {
-  // Safely handle the error without modifying it
-  // Ignore DOMException errors
-  if (err.name === 'DOMException') {
-    return false;
-  }
-  
-  // Let other errors fail the test
-  return true;
+beforeEach(() => {
+  cy.log('Login to the application');
+  cy.visit(data.loginUrl);
+  cy.login();
 });

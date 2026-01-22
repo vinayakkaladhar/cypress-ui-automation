@@ -138,9 +138,9 @@ npm install
 ### Running Tests
 
 ```bash
-cd saucedemo && npx cypress run
+cd saucedemo && npx cypress run --browser chrome
 or for specific test
-cd saucedemo && npx cypress run --spec "integration/e2e/{test_name}.spec.ts"
+cd saucedemo && npx cypress run --spec "integration/e2e/{test_name}.spec.ts" --browser chrome
 ```
 
 ---
