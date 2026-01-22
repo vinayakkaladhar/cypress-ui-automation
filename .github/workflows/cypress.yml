@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install cypress
+        run: npx cypress install
+
       - name: Run Cypress tests (headless)
         run: |
           pwd
