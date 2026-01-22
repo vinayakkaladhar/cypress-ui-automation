@@ -8,9 +8,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "include": [
-    "cypress/**/*.ts"
-  ],
+  "include": ["**/*.ts"],
   "exclude": [
     "node_modules"
   ]
