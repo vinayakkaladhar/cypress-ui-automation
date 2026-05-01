@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-01-22T15:32:02.594Z",
+    "end": "2026-01-22T15:32:05.505Z",
+    "duration": 2911,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "53afaa5f-5515-46e6-931e-a614623bdcd4",
+      "title": "",
+      "fullFile": "integration/e2e/inventory.spec.ts",
+      "file": "integration/e2e/inventory.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90a798c8-5b47-4fdb-bdbe-8e5d759e08da",
+          "title": "End-to-end test cases for the Products Inventory Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "[smoke] Verify user can navigate to inventory page with items listed",
+              "fullTitle": "End-to-end test cases for the Products Inventory Page [smoke] Verify user can navigate to inventory page with items listed",
+              "timedOut": null,
+              "duration": 1479,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/inventory.spec.ts\"\n}",
+              "code": "cy.log('Verify inventory page is loaded');\ninventoryPage.verifyInventoryProductsPageIsLoaded();\ncy.log('Check cart icon, sorting options, and product list');\ninventoryPage.verifyCartAndSortingOptionsAreDisplayed();\ninventoryPage.verifyProductsListIsDisplayed(3);\ncy.log('Verify details and add-to-cart option for Sauce Labs Backpack');\ninventoryPage.verifyProductDetailsAreDisplayedWithPrice('Sauce Labs Backpack', '29.99');\ninventoryPage.verifyAddToCartOptionIsDisplayedFor('Sauce Labs Backpack');",
+              "err": {},
+              "uuid": "4b004907-0c58-490b-b4a2-cd8cbc60e5a5",
+              "parentUUID": "90a798c8-5b47-4fdb-bdbe-8e5d759e08da",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "[regression] Verify product sorting functionality",
+              "fullTitle": "End-to-end test cases for the Products Inventory Page [regression] Verify product sorting functionality",
+              "timedOut": null,
+              "duration": 1410,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"integration/e2e/inventory.spec.ts\"\n}",
+              "code": "cy.log('Sort by Name (Z to A) and verify first item');\ninventoryPage.selectSortingByValue('za');\ninventoryPage.verifyFirstItemName('Test.allTheThings() T-Shirt (Red)');\ncy.log('Sort by Name (A to Z) and verify first item');\ninventoryPage.selectSortingByValue('az');\ninventoryPage.verifyFirstItemName('Sauce Labs Backpack');\ncy.log('Sort by Price (Low to High) and verify first item');\ninventoryPage.selectSortingByValue('lohi');\ninventoryPage.verifyFirstItemName('Sauce Labs Onesie');\ncy.log('Sort by Price (High to Low) and verify first item');\ninventoryPage.selectSortingByValue('hilo');\ninventoryPage.verifyFirstItemName('Sauce Labs Fleece Jacket');",
+              "err": {},
+              "uuid": "b8eca4d4-4042-4b59-a44b-df7025ed4dd7",
+              "parentUUID": "90a798c8-5b47-4fdb-bdbe-8e5d759e08da",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4b004907-0c58-490b-b4a2-cd8cbc60e5a5",
+            "b8eca4d4-4042-4b59-a44b-df7025ed4dd7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2889,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
